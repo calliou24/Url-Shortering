@@ -1,0 +1,21 @@
+
+.copyTC{
+  padding: 7px 20px;
+  border: none;
+  outline: none;
+  background-color: var(--cyan);
+  color: var(--white);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+#copiedLink {
+  background-color: var(--dark-violet);  
+}
+
+@media (max-width : 50em) {
+  .copyTC{
+    width: 100%;
+  }
+}

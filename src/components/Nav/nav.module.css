@@ -1,0 +1,193 @@
+.nav {
+  padding: 20px 0;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoCont {
+  width: 120px  ;
+
+}
+
+.logo {
+  width: 100%;
+  object-fit: cover;
+}
+
+.listCont {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 30px;
+  margin-left: 50px;
+}
+
+.item {
+  cursor: pointer;
+  color: var(--grayish-violet);
+  transition: .2s;
+}
+
+.item:hover {
+  color: var(--very-dark-blue);
+}
+
+.btnCont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 40px;
+}
+
+.login,
+.signUp {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: .2s;
+  position: relative;
+}
+
+.login {
+  color: var(--grayish-violet);
+  background-color: transparent;
+}
+
+.login:hover {
+  color: var(--very-dark-blue);
+}
+
+.signUp {
+  background-color: var(--cyan);
+  color: var(--white);
+  border-radius: 30px;
+  width: 100px;
+  height: 40px;
+}
+
+.signUp:hover {
+  opacity: .6;
+}
+
+@media (max-width: 50em) {
+  .nav {
+    position: relative;
+    z-index: 2000;
+  }
+
+  .listCont {
+    position: absolute;
+    top: 100px;
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--dark-violet);
+    row-gap: 0px;
+    border-radius: 10px;
+    transform: translateX(-100vw);
+    transition: all .4s;
+  }
+
+  .list {
+    flex-direction: column;
+    justify-content: center;
+    column-gap: 0;
+    margin-left: 0;
+    width: 100%;
+    position: relative;
+    column-gap: 0;
+    row-gap: 20px;
+    padding: 20px 0;
+  }
+
+  .list::after {
+    position: absolute;
+    content: '';
+    width: 90%;
+    height: 1px;
+    margin: auto;
+    background-color: var(--grayish-violet);
+    opacity: .3;
+    bottom: 0;
+  }
+
+  .item {
+    color: var(--white);
+  }
+
+  .item:hover {
+    color: var(--white);
+  }
+
+  .login {
+    color: white;
+  }
+
+  .signUp {
+    width: 80%;
+  }
+
+  .btnCont {
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    justify-content: center;
+    column-gap: 0;
+    row-gap: 30px;
+  }
+
+  .hamburger {
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 4px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .bar {
+    width: 100%;
+    height: 4px;
+    background-color: var(--grayish-violet);
+    border-radius: 30px;
+    transition: all .4s;
+  }
+
+  #listOpen {
+    transform: translateX(0);
+  }
+
+  #bar1 {
+    transform: rotate(45deg) translateY(8px) translateX(4px);
+  }
+
+  #bar2 {
+    transform: translateX(50px);
+  }
+
+  #bar3 {
+    transform: rotate(-45deg) translateY(-8px) translateX(3px);
+  }
+}

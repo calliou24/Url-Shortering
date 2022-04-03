@@ -1,0 +1,102 @@
+.stadistics{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.stadisticsDescription{
+  margin: 50px auto;
+  text-align: center;
+  width: 90%;
+
+}
+.title{
+  font-size: 2rem;
+  color: var(--very-dark-blue);
+}
+.description{
+  color: var(--grayish-violet);
+}
+.cardCont{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px auto;
+  position: relative;
+  width: 90%;
+}
+
+.cardCont::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 7px;
+  background-color: var(--cyan);
+}
+.card{
+  width: 90%;
+  max-width: 320px;
+  position: relative;
+  background-color: var(--white);
+  padding: 40px 30px;
+  border-radius: 5px;  
+}
+.iconCont{
+  position:absolute;
+  background-color: var(--dark-violet);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  top: -30px;
+}
+.cardIcon{
+  object-fit: cover;
+  width: 55%;
+}
+.titleCard{
+  font-size: 1.2rem;
+  color: var(--very-dark-blue);
+  font-weight: 700;
+}
+.text{
+  margin-top: 20px;
+  font-size: .9rem;
+  color: var(--grayish-violet);
+}
+
+#Brand Recognition{
+  background-color: red;
+}
+
+
+@media (max-width: 50em) {
+  .cardCont{
+    flex-direction: column;
+    row-gap: 50px;
+  }
+  
+  .cardCont::before{
+    width: 7px;
+    height: 100%;
+  }
+
+  .iconCont{
+    width: 70px;
+    height: 70px;
+    top: -30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .titleCard{
+   text-align: center;
+   width: 100%;
+  }
+  .text{
+    text-align: center;
+  }
+  
+}

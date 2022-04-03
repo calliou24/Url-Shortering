@@ -1,0 +1,40 @@
+.card{
+  width: 100%;
+  background-color: var(--dark-violet);
+  background-image:url(../../assets/images/bg-boost-desktop.svg) ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 30px ;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.title{
+  text-align: center;
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 700;
+}
+.button{
+  border-radius: 30px;
+  background-color: var(--cyan);
+  color: var(--white);
+  padding: 15px 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.button:hover{
+  filter: brightness(150%);
+}
+
+@media (max-width: 50em) {
+  .card{
+    background-image: url(../../assets/images/bg-boost-mobile.svg);
+  } 
+}
