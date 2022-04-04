@@ -1,36 +1,15 @@
-import { useState } from 'react';
 import styles from './url-shorter.module.css';
+import ButtonCopyToC from './ButtonCopy/button';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ButtonCopyToC from './ButtonCopy/button';
+
 import { motion } from 'framer-motion';
 
+import useGetShortUrl from '../../hooks/useGetShortUrl';
+
 function UrlShorter() {
-	const [ url, setUrl ] = useState('');
-	const [ shortenLinks, setShortenLinks ] = useState([ { code: 'not-display', original: null, short: null } ]);
-	const [ validLink, setValidLink ] = useState(false);
-	const api_key = `https://api.shrtco.de/v2/shorten?url=${url}`;
-
-	const handdleShortLink = async (e: any) => {
-		e.preventDefault();
-		if (validLink) {
-			const request = await fetch(api_key);
-			const { result } = await request.json();
-			const { code, original_link, short_link } = result;
-			setShortenLinks([ ...shortenLinks, { code: code, original: original_link, short: short_link } ]);
-		}
-		return;
-	};
-
-	const handdleChange = (e: any) => {
-		const { value } = e.target;
-		setUrl(value);
-		const regex = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
-		if (regex.test(url)) {
-			return setValidLink(true);
-		}
-		return setValidLink(false);
-	};
+  const {handdleShortLink,handdleChange, url, shortenLinks, validLink} = useGetShortUrl() 
 
 	const handdleCopy = () => {
 		return toast.success('Copied! ⭐', {
